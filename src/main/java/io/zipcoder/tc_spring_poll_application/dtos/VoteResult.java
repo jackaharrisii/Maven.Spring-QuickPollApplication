@@ -1,4 +1,4 @@
-package dtos;
+package io.zipcoder.tc_spring_poll_application.dtos;
 
 import java.util.Collection;
 

@@ -1,4 +1,4 @@
-package dtos;
+package io.zipcoder.tc_spring_poll_application.dtos;
 
 public class OptionCount {
     private Long optionId;

@@ -1,7 +1,7 @@
 package io.zipcoder.tc_spring_poll_application.controller;
 
-import dtos.OptionCount;
-import dtos.VoteResult;
+import io.zipcoder.tc_spring_poll_application.dtos.OptionCount;
+import io.zipcoder.tc_spring_poll_application.dtos.VoteResult;
 import io.zipcoder.tc_spring_poll_application.domain.Option;
 import io.zipcoder.tc_spring_poll_application.domain.Vote;
 import io.zipcoder.tc_spring_poll_application.repositories.PollRepository;
