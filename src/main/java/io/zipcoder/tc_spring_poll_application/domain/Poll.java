@@ -17,7 +17,7 @@ public class Poll {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "POLL_ID")
     @OrderBy
-    private Set<Option> option;
+    private Set<Option> options;
 
     public Long getId() {
         return id;
@@ -35,11 +35,11 @@ public class Poll {
         this.question = question;
     }
 
-    public Set getOption() {
-        return option;
+    public Set<Option> getOptions() {
+        return options;
     }
 
-    public void setOption(Set option) {
-        this.option = option;
+    public void setOptions(Set<Option> options) {
+        this.options = options;
     }
 }
