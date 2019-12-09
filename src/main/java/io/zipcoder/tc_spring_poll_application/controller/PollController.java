@@ -4,6 +4,8 @@ import io.zipcoder.tc_spring_poll_application.domain.Poll;
 import io.zipcoder.tc_spring_poll_application.exception.ResourceNotFoundException;
 import io.zipcoder.tc_spring_poll_application.repositories.PollRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,9 +27,16 @@ public class PollController {
 
     @RequestMapping(value="/polls", method= RequestMethod.GET)
     public ResponseEntity<Iterable<Poll>> getAllPolls() {
-        Iterable<Poll> allPolls = pollRepository.findAll();
+        Pageable pageable = new PageRequest(0, 5);
+        Iterable<Poll> allPolls = pollRepository.findAll(pageable);
         return new ResponseEntity<>(allPolls, HttpStatus.OK);
     }
+
+//    @RequestMapping(value="/polls", method= RequestMethod.GET)
+//    public ResponseEntity<Iterable<Poll>> getAllPolls() {
+//        Iterable<Poll> allPolls = pollRepository.findAll();
+//        return new ResponseEntity<>(allPolls, HttpStatus.OK);
+//    }
 
     @RequestMapping(value="/polls", method=RequestMethod.POST)
     public ResponseEntity<Poll> createPoll(@RequestBody @Valid Poll poll) {
